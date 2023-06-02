@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <link rel="stylesheet" href="highlight/styles/default.min.css">
+  <link rel="stylesheet" href="css/styles.css">
+  <title>Image to Code</title>
+</head>
+
+<body class="container">
+  <script src="highlight/highlight.min.js"></script>
+  <script src="highlight/languages/python.min.js"></script>
+  <script src="highlight/languages/javascript.min.js"></script>
+  <script src="highlight/languages/c.min.js"></script>
+  <script src='https://cdn.jsdelivr.net/npm/tesseract.js@4/dist/tesseract.min.js'></script>
+
+  <header class="header">
+  <h1>Image to Code</h1>
+  <h3>Turn any image into copy and pastable text! Simply upload your file, choose the language, and click "Run OCR".</h3>
+  </header>
+  <input type="file" id="fileInput" onchange="previewFile()">
+  <label for="language">Select a language:</label>
+  <select id="language">
+    <option value="javascript">JavaScript</option>
+    <option value="python">Python</option>
+    <option value="c">C</option>
+  </select>
+  <button onclick="runOCR()">Run OCR</button>
+  
+
+  <div class="grid-sidebyside">
+    <img src="" alt="Image Upload">
+    <pre>
+      <code id="ocrOutput">
+
+      </code>
+  </pre>
+</div>
+  <script src="js/app.js"></script>
+</body>
+<footer>
+  <h1>This page runs on Tesseract.js and Highlight.js. </h1>
+</footer>
+</html>
